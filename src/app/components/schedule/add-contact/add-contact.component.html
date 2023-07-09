@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <h1>Añadir un contacto</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form #from="ngForm" (ngSubmit)="addContact()" >
+                    <div class="row form-group">
+                        <div class="col-md-6 col-12 form-group">
+                            <label for="name">Nombre (*)</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Escribe tu nombre" minlength="3" required
+                            #name="ngModel" [(ngModel)]="contact.name">
+                        </div>
+                        <div class="col-md-6 col-12 form-group">
+                            <label for="surname">apellido (*)</label>
+                            <input type="text" name="surname" id="surname" class="form-control" placeholder="Escribe tu apellido" minlength="3" required
+                            #surname="ngModel" [(ngModel)]="contact.surname">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row form-group">
+                            <div class="col-12 form-group">
+                                <label for="description">descripcion</label>
+                                <textarea name="description" class="form-control" id="description" maxlength="50" placeholder="Escribe una descripcion del contacto"
+                                #description="ngModel" [(ngModel)]="contact.description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-6 col-12 form-group">
+                            <label for="sex">sexo</label>
+                            <select class="form-select" name="sex" id="sex"
+                            #sex="ngModel" [(ngModel)]="contact.sex">
+                                <option value="hombre">Hombre</option>
+                                <option value="mujer">mujer</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-12 form-group">
+                            <label for="company">Empresa</label>
+                            <input type="text" name="company" id="company" class="form-control" placeholder="Escribe tu empresa" maxlength="20" required
+                            #company="ngModel" [(ngModel)]="contact.company">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-6 col-12 form-group">
+                            <label for="email">email</label>
+                            <input type="text" name="email" id="email" class="form-control" placeholder="Escribe tu email" maxlength="20" required 
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #email="ngModel" [(ngModel)]="contact.email">
+                        </div>
+                        <div class="col-md-6 col-12 form-group">
+                            <label for="telephone">telefono</label>
+                            <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Escribe tu telefono" maxlength="20" required
+                            #telephone="ngModel" [(ngModel)]="contact.telephone">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-primary btn-block col-12">añadir contacto</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
